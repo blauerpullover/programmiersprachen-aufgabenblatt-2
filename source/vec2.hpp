@@ -6,12 +6,9 @@ struct Vec2     // Datentransferobjekt, vektor des R^2
     float x;
     float y;
 
-    Vec2() : x(0.0), y(0.0){}  //Initialisierungs Liste
+    Vec2(); //Initialisierungs Liste
     
-    Vec2(float n_x, float n_y) {
-        x = n_x;
-        y = n_y;
-    }
+    Vec2(float n_x, float n_y);
 
 
 Vec2& operator+=(Vec2 const& v); 

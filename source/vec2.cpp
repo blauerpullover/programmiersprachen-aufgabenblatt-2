@@ -1,5 +1,11 @@
 #include "vec2.hpp"
 
+Vec2::Vec2() : x{0.0}, y{0.0}{} 
+Vec2::Vec2(float n_x, float n_y) :
+    x{n_x},
+    y{n_y} {}
+    
+
 //2.3
     Vec2& Vec2::operator+=(Vec2 const& v){
         x += v.x;
