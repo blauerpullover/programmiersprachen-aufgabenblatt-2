@@ -3,6 +3,7 @@
 #include "vec2.hpp"
 #include "color.hpp"
 #include <math.h>
+#include "window.hpp"
 
 class Circle{
     public:
@@ -14,7 +15,7 @@ class Circle{
         float circumference() const;
         void color(Color const& clr);
         Color color() const;
-
+        void draw(Window  const& w) const;
     private:
         Vec2 center_;
         float radius_;

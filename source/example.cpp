@@ -2,13 +2,21 @@
 #include <GLFW/glfw3.h>
 #include <utility>
 #include <cmath>
+#include "circle.hpp"
+#include "rectangle.hpp"
 
 
 int main(int argc, char* argv[])
 {
   Window win{std::make_pair(800,800)};
 
+      
+   Rectangle r1 {Vec2{10.0,29.0},Vec2{200, 300},Color{1,1,0}};
+   Circle c1 {Vec2{300.0, 400.0}, 70.0, Color{1,0,1}};
+
+
   while (!win.should_close()) {
+
     if (win.get_key(GLFW_KEY_ESCAPE) == GLFW_PRESS) {
       win.close();
     }
@@ -47,8 +55,12 @@ int main(int argc, char* argv[])
     std::string text = "mouse position: (" + std::to_string(m.first) + ", " + std::to_string(m.second) + ")";
     win.draw_text(10, 5, 35.0f, text);
 
+    r1.draw(win);
+    c1.draw(win);
+    
     win.update();
   }
 
   return 0;
 }
+
