@@ -36,8 +36,17 @@ void Circle::draw(Window const& w) const {
                      center_.y + radius_ * cos( (2 * M_PI / a) * (i+1)),
                      color_.r,color_.g,color_.b);
     }
+}
 
-   
-    
+void Circle::draw(Window const& w, Color const& clr) const {
+    float a = 32.0;
+    for(int i = 0; i < a; i++){
+
+        w.draw_line( center_.x + radius_ * sin( (2 * M_PI / a) * i),
+                     center_.y + radius_ * cos( (2 * M_PI / a) * i),
+                     center_.x + radius_ * sin( (2 * M_PI / a) * (i+1)),
+                     center_.y + radius_ * cos( (2 * M_PI / a) * (i+1)),
+                     clr.r, clr.g, clr.b);
+    }
 }
 

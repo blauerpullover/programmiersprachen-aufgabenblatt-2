@@ -25,10 +25,11 @@ float Rectangle::circumference() const{
     return abs(2 * (max_.x - min_.x) + 2 * (max_.y - min_.y));
 }
 
+
 void Rectangle::draw(Window const& w) const {
     w.draw_line(min_.x, min_.y,                     //erste Linie
                 max_.x, min_.y,
-                color_.r,color_.g,color_.b
+                color_.r,color_.g,color_.b                                                        
                 );
     w.draw_line(max_.x, min_.y,                     //zweite Linie
                 max_.x, max_.y,
@@ -41,6 +42,25 @@ void Rectangle::draw(Window const& w) const {
     w.draw_line(min_.x, max_.y,                     //vierte Linie
                 min_.x, min_.y,
                 color_.r,color_.g,color_.b
+                );
+}
+
+void Rectangle::draw(Window const& w, Color const& clr) const {
+    w.draw_line(min_.x, min_.y,                     //erste Linie
+                max_.x, min_.y,
+               clr.r, clr.g, clr.b                                                        
+                );
+    w.draw_line(max_.x, min_.y,                     //zweite Linie
+                max_.x, max_.y,
+                clr.r, clr.g, clr.b
+                );
+    w.draw_line(max_.x, max_.y,                     //dritte Linie
+                min_.x, max_.y,
+                clr.r, clr.g, clr.b
+                );
+    w.draw_line(min_.x, max_.y,                     //vierte Linie
+                min_.x, min_.y,
+                clr.r, clr.g, clr.b
                 );
 }
 

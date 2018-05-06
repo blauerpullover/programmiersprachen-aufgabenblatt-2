@@ -16,6 +16,7 @@ class Circle{
         void color(Color const& clr);
         Color color() const;
         void draw(Window  const& w) const;
+        void draw(Window const& w, Color const& clr) const;            
     private:
         Vec2 center_;
         float radius_;
