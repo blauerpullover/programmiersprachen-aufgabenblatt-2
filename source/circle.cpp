@@ -26,6 +26,7 @@ float Circle::circumference() const{
     return 2 * M_PI * radius_;
 }
 
+//2.11
 void Circle::draw(Window const& w) const {
     float a = 32.0;
     for(int i = 0; i < a; i++){
@@ -38,6 +39,7 @@ void Circle::draw(Window const& w) const {
     }
 }
 
+//2.12
 void Circle::draw(Window const& w, Color const& clr) const {
     float a = 32.0;
     for(int i = 0; i < a; i++){
@@ -50,3 +52,13 @@ void Circle::draw(Window const& w, Color const& clr) const {
     }
 }
 
+//2.13
+bool Circle::is_inside(Vec2 const& p) {
+  //(x-center_x)^2 + (y - center_y)^2 < radius^2
+  if (abs(pow(p.x - center_.x,2)) + (pow(p.y - center_.y,2)) <= pow(radius_,2)){
+      return true;
+  }
+  else{
+      return false;
+  }
+}

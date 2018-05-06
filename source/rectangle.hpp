@@ -16,6 +16,8 @@ class Rectangle{
         Color color() const;
         void draw(Window const& w) const;             
         void draw(Window const& w, Color const& clr) const;
+        bool is_inside(Vec2 const& p);                              //////////////
+
     private: 
         Vec2 min_;
         Vec2 max_;

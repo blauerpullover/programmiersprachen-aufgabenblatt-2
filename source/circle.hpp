@@ -16,7 +16,8 @@ class Circle{
         void color(Color const& clr);
         Color color() const;
         void draw(Window  const& w) const;
-        void draw(Window const& w, Color const& clr) const;            
+        void draw(Window const& w, Color const& clr) const;  
+        bool is_inside(Vec2 const& p);                                  ////////////////
     private:
         Vec2 center_;
         float radius_;

@@ -4,6 +4,7 @@
 #include <cmath>
 #include "circle.hpp"
 #include "rectangle.hpp"
+#include <vector>
 
 
 int main(int argc, char* argv[])
@@ -12,8 +13,17 @@ int main(int argc, char* argv[])
 
       
    Rectangle r1 {Vec2{10.0,29.0},Vec2{200, 300},Color{1,1,0}};
+   Rectangle r2 {Vec2{600.0,390.0},Vec2{700, 700},Color{1,0,0}};
    Circle c1 {Vec2{300.0, 400.0}, 70.0, Color{1,0,1}};
+   Circle c2 {Vec2{500.0, 600.0}, 90.0, Color{1,0,0.5}};
 
+  std::vector<Rectangle> r;
+  r.push_back(r1);
+  r.push_back(r2);
+  
+  std::vector<Circle> c;
+  c.push_back(c1);
+  c.push_back(c2);
 
   while (!win.should_close()) {
 
@@ -55,9 +65,26 @@ int main(int argc, char* argv[])
     std::string text = "mouse position: (" + std::to_string(m.first) + ", " + std::to_string(m.second) + ")";
     win.draw_text(10, 5, 35.0f, text);
 
-    r1.draw(win);
-    c1.draw(win);
-    
+
+  for (int i = 0; i < r.size(); i++){
+     if(r[i].is_inside(Vec2{float(m.first),float(m.second)}) == true){
+      r[i].draw(win, Color{0,0,1});
+    }
+    else{
+      r[i].draw(win);
+    }
+  }
+
+   for (int i = 0; i < c.size(); i++){
+     if(c[i].is_inside(Vec2{float(m.first),float(m.second)}) == true){
+      c[i].draw(win, Color{0,0,1});
+    }
+    else{
+      c[i].draw(win);
+    }
+  }
+  
+
     win.update();
   }
 

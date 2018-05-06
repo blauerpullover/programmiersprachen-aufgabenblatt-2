@@ -156,6 +156,7 @@ TEST_CASE("aufgabe2.8","[aufgabe2.8]"){
   REQUIRE(c1.radius() == Approx(2.0));
   REQUIRE(c1.center().x == Approx(0.0));
   REQUIRE(c1.center().y == Approx(1.0));
+  
   Rectangle r1 = Rectangle{Vec2{2.0,3.0},Vec2{4.0,5.0},Color{0.0,0.0,1.0}};
   Rectangle r2 = Rectangle{Vec2{1.0,1.0},Vec2{4.0,6.0},Color{0.0,0.0,1.0}};
   REQUIRE(r1.min().x == Approx(2.0));
@@ -166,4 +167,16 @@ TEST_CASE("aufgabe2.8","[aufgabe2.8]"){
   REQUIRE(c1.circumference() == Approx(12.5663706144));
   REQUIRE(r1.circumference() == Approx(8));
   REQUIRE(r2.circumference() == Approx(16));
+}
+
+TEST_CASE("aufgabe2.13","[aufgabe2.13]"){
+  Vec2 p1 = Vec2{3.0, 4.0};
+  Vec2 p2 = Vec2{6.0, 7.0};
+  Vec2 p3 = Vec2{13.0,18.0};
+  Rectangle r1 = Rectangle{Vec2{2.0,3.0},Vec2{4.0,5.0},Color{0.0,0.0,1.0}};
+  REQUIRE(r1.is_inside(p1) == true);
+  REQUIRE(r1.is_inside(p2) == false);
+  Circle c1 = Circle{Vec2{0.0, 1.0},10.0,Color{0.0,0.0,1.0}};
+  REQUIRE(c1.is_inside(p1) == true);
+  REQUIRE(c1.is_inside(p3) == false);
 }

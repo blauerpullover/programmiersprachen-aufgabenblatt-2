@@ -25,7 +25,7 @@ float Rectangle::circumference() const{
     return abs(2 * (max_.x - min_.x) + 2 * (max_.y - min_.y));
 }
 
-
+//2.11
 void Rectangle::draw(Window const& w) const {
     w.draw_line(min_.x, min_.y,                     //erste Linie
                 max_.x, min_.y,
@@ -45,6 +45,7 @@ void Rectangle::draw(Window const& w) const {
                 );
 }
 
+//2.12
 void Rectangle::draw(Window const& w, Color const& clr) const {
     w.draw_line(min_.x, min_.y,                     //erste Linie
                 max_.x, min_.y,
@@ -62,6 +63,17 @@ void Rectangle::draw(Window const& w, Color const& clr) const {
                 min_.x, min_.y,
                 clr.r, clr.g, clr.b
                 );
+}
+
+//2.13
+bool Rectangle::is_inside(Vec2 const& p) {
+    if(p.x > min_.x && p.y > min_.y && p.x < max_.x && p.y <max_.y){
+        return true;
+    }
+    else{
+        return false;                
+    }
+    
 }
 
 
