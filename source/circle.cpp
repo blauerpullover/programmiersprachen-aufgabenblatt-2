@@ -51,6 +51,6 @@ bool Circle::is_inside(Vec2 const& p) {
       return true;
   }
   else{
-      return false;
+    return false;
   }
 }
