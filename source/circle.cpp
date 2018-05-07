@@ -48,9 +48,9 @@ void Circle::draw(Window const& w, Color const& clr) const {
 bool Circle::is_inside(Vec2 const& p) {
   //(x-center_x)^2 + (y - center_y)^2 < radius^2
   if (abs(pow(p.x - center_.x,2)) + (pow(p.y - center_.y,2)) <= pow(radius_,2)){
-      return true;
+        return true;
   }
   else{
-    return false;
+        return false;
   }
 }
