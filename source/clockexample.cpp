@@ -1,9 +1,9 @@
 #include "window.hpp"
+#include "circle.hpp"
+#include "clock.hpp"
 #include <GLFW/glfw3.h>
 #include <utility>
 #include <cmath>
-#include "circle.hpp"
-#include "clock.hpp"
 
 
 

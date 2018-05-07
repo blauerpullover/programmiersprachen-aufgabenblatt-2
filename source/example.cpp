@@ -1,10 +1,10 @@
 #include "window.hpp"
-#include <GLFW/glfw3.h>
-#include <utility>
-#include <cmath>
 #include "circle.hpp"
 #include "rectangle.hpp"
 #include <vector>
+#include <GLFW/glfw3.h>
+#include <utility>
+#include <cmath>
 
 
 int main(int argc, char* argv[])
@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
     win.draw_text(10, 5, 35.0f, text);
 
 
-  for (int i = 0; i < r.size(); i++){
+  for (int i = 0; i < r.size(); ++i){
      if(r[i].is_inside(Vec2{float(m.first),float(m.second)}) == true){
       r[i].draw(win, Color{0,0,1});
     }
@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
     }
   }
 
-   for (int i = 0; i < c.size(); i++){
+   for (int i = 0; i < c.size(); ++i){
      if(c[i].is_inside(Vec2{float(m.first),float(m.second)}) == true){
       c[i].draw(win, Color{0,0,1});
     }

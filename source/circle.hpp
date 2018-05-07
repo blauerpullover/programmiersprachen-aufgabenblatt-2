@@ -2,8 +2,8 @@
 #define CIRCLE_HPP
 #include "vec2.hpp"
 #include "color.hpp"
-#include <math.h>
 #include "window.hpp"
+#include <math.h>
 
 class Circle{
     public:

@@ -1,6 +1,6 @@
 #include "vec2.hpp"
 
-Vec2::Vec2() : x{0.0}, y{0.0}{} 
+Vec2::Vec2() : x{0.0f}, y{0.0f}{} 
 Vec2::Vec2(float n_x, float n_y) :
     x{n_x},
     y{n_y} {}

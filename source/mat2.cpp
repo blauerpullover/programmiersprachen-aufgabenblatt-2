@@ -3,7 +3,7 @@
 #include <math.h>
 
 //2.5
-Mat2::Mat2() : a{1.0}, b{0.0}, c{0.0}, d{1.0}{}
+Mat2::Mat2() : a{1.0f}, b{0.0f}, c{0.0f}, d{1.0f}{}
 
 Mat2::Mat2(float m_a, float m_b, float m_c, float m_d) :
     a{m_a},

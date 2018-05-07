@@ -1,6 +1,6 @@
 #include "rectangle.hpp"
-#include <math.h>
 #include "window.hpp"
+#include <math.h>
 
 
 Rectangle::Rectangle(Vec2 const& mini, Vec2 const& maxi, Color const& clr) :
@@ -27,22 +27,7 @@ float Rectangle::circumference() const{
 
 //2.11
 void Rectangle::draw(Window const& w) const {
-    w.draw_line(min_.x, min_.y,                     //erste Linie
-                max_.x, min_.y,
-                color_.r,color_.g,color_.b                                                        
-                );
-    w.draw_line(max_.x, min_.y,                     //zweite Linie
-                max_.x, max_.y,
-                color_.r,color_.g,color_.b
-                );
-    w.draw_line(max_.x, max_.y,                     //dritte Linie
-                min_.x, max_.y,
-                color_.r,color_.g,color_.b
-                );
-    w.draw_line(min_.x, max_.y,                     //vierte Linie
-                min_.x, min_.y,
-                color_.r,color_.g,color_.b
-                );
+    draw(w, color_);
 }
 
 //2.12
